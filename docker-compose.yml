@@ -11,8 +11,8 @@ services:
       - "traefik.frontend.rule=Path:/api"
       - "traefik.port=3000"
   reverse-proxy:
-    image: traefik
-    command: --api --docker
+    image: traefik:latest
+    command: --api.insecure=true --providers.docker
     ports:
       - "80:80"
       - "8080:8080"
